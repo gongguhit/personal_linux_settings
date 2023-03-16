@@ -3,14 +3,14 @@
 
 Helpful for setting up a new Linux workshop quickly.
 ## SSH config
-1. 快速登录ssh-config
+1. quick login
 
-client `~/.ssh/config`:
+client settings: `~/.ssh/config`:
 
 ```bash
 Host gg306
     HostName <PUBLIC_IP>
-    # HostName 111.11.3.1 私网IP
+    # HostName 111.11.3.1 private IP
     User root
 ```
 
@@ -19,12 +19,19 @@ connect after config
 ```bash
 ssh gg306
 ```
-
-2. 免密登录
-
-本地的`~/.ssh/id_rsa.pub`登记到远程的`~/.ssh/authorized_keys`
-
+2. Cloudflared client settings
 ```bash
+# install cloudflared
+sudo apt install cloudflared
+# modify ssh config
+vim ~/.ssh/config
+# add
+Host ssh.example.com
+ProxyCommand /usr/local/bin/cloudflared access ssh --hostname %h
+```
+Then can connect with command
+```bash
+ssh <username>@ssh.example.com
 ```
 
 ## Git settings and usage
