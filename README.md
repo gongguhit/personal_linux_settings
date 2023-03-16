@@ -2,7 +2,7 @@
 > personal linux configurations user:gg
 
 Helpful for setting up a new Linux workshop quickly.
-[toc]
+[[toc]]
 ## SSH config
 1. quick login
 
