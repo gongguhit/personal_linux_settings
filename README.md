@@ -40,7 +40,7 @@ ssh <username>@ssh.example.com
 ### git init config
 ```bash
 git config --global user.name "gongguhit"
-git config --global user.email gonggu95@gmail.com
+git config --global user.email gongguhit@gmail.com
 ssh-keygen -t rsa -C "gongguhit@gmail.com"
 ```
 ```bash
